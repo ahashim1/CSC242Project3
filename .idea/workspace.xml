@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4f8ae5c-b200-4030-b10a-e779de7449e8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/bn/inference/LikelihoodWeighting.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/bn/inference/RejectionSampling.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/bn/inference/GibbsSampling.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -98,12 +97,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LikelihoodWeighting.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LikelihoodWeighting.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bn/inference/LikelihoodWeighting.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state relative-caret-position="122">
+              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GibbsSampling.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/bn/inference/GibbsSampling.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="16" lean-forward="false" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -131,6 +142,7 @@
         <option value="$PROJECT_DIR$/src/bn/inference/EnumerationInferencer.java" />
         <option value="$PROJECT_DIR$/src/bn/inference/RejectionSampling.java" />
         <option value="$PROJECT_DIR$/src/bn/inference/LikelihoodWeighting.java" />
+        <option value="$PROJECT_DIR$/src/bn/inference/GibbsSampling.java" />
       </list>
     </option>
   </component>
@@ -281,12 +293,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1522011383541</updated>
-      <workItem from="1522011385203" duration="6917000" />
+      <workItem from="1522011385203" duration="8041000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6917000" />
+    <option name="totallyTimeSpent" value="8041000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="640" height="735" extended-state="0" />
@@ -461,9 +473,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/bn/inference/LikelihoodWeighting.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        <state relative-caret-position="122">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bn/inference/GibbsSampling.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="16" lean-forward="false" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
