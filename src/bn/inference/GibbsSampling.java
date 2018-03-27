@@ -13,7 +13,7 @@ public class GibbsSampling {
 
         for (int j=1; j<=N; j++){
             for (RandomVariable Zi: Z){
-                
+
             }
         }
     }

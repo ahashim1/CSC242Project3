@@ -10,7 +10,7 @@ public class RejectionSampling{
         int[] counts = new int[X.getDomain().size()];
         for (int j = 1; j <= N; j++){
             Assignment x = priorSample(bn);
-            if (x.isConsistentWith(e)){
+            if (checkConsistent(x, e)){
 
             }
         }
@@ -18,4 +18,23 @@ public class RejectionSampling{
         Q.normalize();
         return Q;
     }
+
+    private Assignment priorSample(BayesianNetwork bn){
+
+    }
+    private boolean checkConsistent(Assignment x, Assignment e){
+        for (RandomVariable a: x.keySet()){
+            for (RandomVariable b:e.keySet()){
+                if (a.getName().equals(b.getName())){
+                    // Inconsistent if the names are the same but they have different values
+                    if (!x.get(a).equals(e.get(b))){
+                        return false;
+                    }
+                }
+            }
+        }
+
+        return true;
+    }
+
 }
