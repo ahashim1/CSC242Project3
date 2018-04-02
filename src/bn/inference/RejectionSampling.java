@@ -20,7 +20,7 @@ public class RejectionSampling{
     }
 
     private Assignment priorSample(BayesianNetwork bn){
-
+        return new Assignment();
     }
     private boolean checkConsistent(Assignment x, Assignment e){
         for (RandomVariable a: x.keySet()){

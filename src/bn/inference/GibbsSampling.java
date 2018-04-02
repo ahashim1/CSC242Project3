@@ -16,6 +16,8 @@ public class GibbsSampling {
 
             }
         }
+
+        return new Distribution(X);
     }
 
     private List<RandomVariable> getNonEvidenceVariables(BayesianNetwork bn, Assignment e){

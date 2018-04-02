@@ -35,7 +35,7 @@ public class LikelihoodWeighting {
                 weightedSample.assignment.put(X, e.get(X));
                 weightedSample.weight *= bn.getProb(X, weightedSample.assignment);
             }else{
-                = getRandomSample()
+//                = getRandomSample()
             }
         }
 
