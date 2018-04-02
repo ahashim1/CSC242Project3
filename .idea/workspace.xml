@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4f8ae5c-b200-4030-b10a-e779de7449e8" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CSC242Project3/Main.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bn/inference/EnumerationInferencer.java" afterPath="$PROJECT_DIR$/src/bn/inference/EnumerationInferencer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bn/inference/GibbsSampling.java" afterPath="$PROJECT_DIR$/src/bn/inference/GibbsSampling.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bn/inference/LikelihoodWeighting.java" afterPath="$PROJECT_DIR$/src/bn/inference/LikelihoodWeighting.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bn/inference/RejectionSampling.java" afterPath="$PROJECT_DIR$/src/bn/inference/RejectionSampling.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,8 +27,8 @@
       <file leaf-file-name="EnumerationInferencer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/bn/inference/EnumerationInferencer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="54" column="38" lean-forward="false" selection-start-line="54" selection-start-column="33" selection-end-line="54" selection-end-column="38" />
+            <state relative-caret-position="68">
+              <caret line="57" column="30" lean-forward="false" selection-start-line="57" selection-start-column="30" selection-end-line="57" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -268,12 +262,12 @@
       <updated>1522011383541</updated>
       <workItem from="1522011385203" duration="8771000" />
       <workItem from="1522114994860" duration="2079000" />
-      <workItem from="1522696257238" duration="5660000" />
+      <workItem from="1522696257238" duration="5828000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16510000" />
+    <option name="totallyTimeSpent" value="16678000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="640" y="22" width="640" height="737" extended-state="0" />
@@ -613,8 +607,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/bn/inference/EnumerationInferencer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="54" column="38" lean-forward="false" selection-start-line="54" selection-start-column="33" selection-end-line="54" selection-end-column="38" />
+        <state relative-caret-position="68">
+          <caret line="57" column="30" lean-forward="false" selection-start-line="57" selection-start-column="30" selection-end-line="57" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
