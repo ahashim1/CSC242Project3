@@ -53,6 +53,10 @@ public class EnumerationInferencer implements Inferencer {
 
     public static void main(String[] args) {
         String[] myargs = {"aima-alarm.xml", "B", "J", "true", "M", "true"};
+
+        // wet grass example
+//        String[] myargs = {"aima-wet-grass.xml", "R", "S", "true"};
+
         args = myargs;
 //        MAKE SURE I DELETE PREVIOUS TWO LINES BEFORE SUBMITTING
 
