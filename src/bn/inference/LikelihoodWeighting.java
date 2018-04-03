@@ -5,10 +5,8 @@ import bn.parser.BIFParser;
 import bn.parser.XMLBIFParser;
 
 import java.io.FileInputStream;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 
 public class LikelihoodWeighting {
     private class WeightedSample{
@@ -25,7 +23,7 @@ public class LikelihoodWeighting {
     public LikelihoodWeighting(int samples){
         this.samples = samples;
     }
-    
+
 
     public Distribution ask(BayesianNetwork bn, RandomVariable X, Assignment e){
         Distribution Q = new Distribution(X);
@@ -35,7 +33,7 @@ public class LikelihoodWeighting {
 
         for (int j = 1; j<=samples; j++){
             WeightedSample weightedSample = weightedSample(bn, e);
-            Q.put(weightedSample.assignment.get(X), Q.get(weightedSample.assignment.get(X)) + weightedSample.weight)
+            Q.put(weightedSample.assignment.get(X), Q.get(weightedSample.assignment.get(X)) + weightedSample.weight);
         }
 
         Q.normalize();

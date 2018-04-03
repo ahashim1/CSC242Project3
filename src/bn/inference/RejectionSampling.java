@@ -23,10 +23,8 @@ public class RejectionSampling implements Inferencer {
         }
         for (int j = 1; j <= samples; j++) {
             Assignment event = priorSample(bn);
-            System.out.println(e.toString());
-            System.out.println(event.toString());
+
             if (isConsistent(event, e)) {
-                System.out.println("yes");
                 double previous = Q.get(event.get(X));
 
                 Q.put(event.get(X), previous + 1);
@@ -34,21 +32,19 @@ public class RejectionSampling implements Inferencer {
             }
         }
 
+        System.out.println(Q.toString());
         Q.normalize();
         return Q;
     }
 
     private Object randomSample(Distribution distribution){
+        System.out.println(distribution.toString());
         List<Object> keys = new ArrayList<Object>(distribution.keySet());
-        //System.out.println(keys.toString());
-        List<Double> probabilities = new ArrayList<Double>(keys.size());
-        probabilities.add(distribution.get(keys.get(0)));
-        for (int index = 1; index < keys.size(); index++) {
-            probabilities.add(probabilities.get(index - 1) + distribution.get(keys.get(index)));
-        }
-        double rnd = Math.random();
+        double randomValue = Math.random();
+        double sum = 0.0;
         for (int index = 0; index < keys.size(); index++) {
-            if (rnd <= probabilities.get(index))
+            sum += distribution.get(keys.get(index));
+            if (randomValue <= sum)
                 return keys.get(index);
         }
         return keys.get(keys.size() - 1);
@@ -74,15 +70,19 @@ public class RejectionSampling implements Inferencer {
     }
 
     public boolean isConsistent(Assignment assignment, Assignment e){
-        boolean isConsistent = true;
-        for (Object key: e.keySet()){
-            isConsistent = isConsistent && (e.get(key).equals(assignment.get(key)));
+
+        for (Object ob: e.keySet()){
+            if (!e.get(ob).toString().equals(assignment.get(ob).toString())){
+                return false;
+            }
+
         }
-        return isConsistent;
+
+        return true;
     }
 
     public static void main(String[] args) {
-//        String[] myargs = {"100000", "aima-alarm.xml", "B", "J", "true", "M", "true"};
+//        String[] myargs = {"1000000", "aima-alarm.xml", "B", "J", "true", "M", "true"};
 
         // wet grass example
         String[] myargs = {"100000", "aima-wet-grass.xml", "R", "S", "true"};
