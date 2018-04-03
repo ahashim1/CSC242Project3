@@ -74,4 +74,19 @@ public class Distribution extends LinkedHashMap<Object,Double> {
 	}
     }
 
+
+//    My implementation of getRandomSample
+    public Object randomSample(){
+        List<Object> keys = new ArrayList<Object>(keySet());
+        double randomValue = Math.random();
+        double sum = 0.0;
+        for (int index = 0; index < keys.size(); index++) {
+            sum += get(keys.get(index));
+            if (randomValue <= sum){
+                return keys.get(index);
+            }
+        }
+        return keys.get(keys.size() - 1);
+    }
+
 }

@@ -17,6 +17,7 @@ public class RejectionSampling implements Inferencer {
     }
 
     public Distribution ask(BayesianNetwork bn, RandomVariable X, Assignment e){
+
         Distribution Q = new Distribution(X);
         for (Object ob: X.getDomain()){
             Q.put(ob, 0);
@@ -32,23 +33,11 @@ public class RejectionSampling implements Inferencer {
             }
         }
 
-        System.out.println(Q.toString());
         Q.normalize();
         return Q;
     }
 
-    private Object randomSample(Distribution distribution){
-        System.out.println(distribution.toString());
-        List<Object> keys = new ArrayList<Object>(distribution.keySet());
-        double randomValue = Math.random();
-        double sum = 0.0;
-        for (int index = 0; index < keys.size(); index++) {
-            sum += distribution.get(keys.get(index));
-            if (randomValue <= sum)
-                return keys.get(index);
-        }
-        return keys.get(keys.size() - 1);
-    }
+
 
     private Assignment priorSample(BayesianNetwork bn) {
         Assignment event = new Assignment();
@@ -62,8 +51,7 @@ public class RejectionSampling implements Inferencer {
             }
 
 
-            distribution.normalize();
-            event.set(X, randomSample(distribution));
+            event.set(X, distribution.randomSample());
         }
 
         return event;

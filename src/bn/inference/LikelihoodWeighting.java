@@ -8,7 +8,7 @@ import java.io.FileInputStream;
 import java.util.Arrays;
 import java.util.HashMap;
 
-public class LikelihoodWeighting {
+public class LikelihoodWeighting implements Inferencer  {
     private class WeightedSample{
         double weight;
         Assignment assignment;
@@ -19,7 +19,7 @@ public class LikelihoodWeighting {
     }
 
 
-    int samples;
+    private int samples;
     public LikelihoodWeighting(int samples){
         this.samples = samples;
     }
@@ -43,12 +43,21 @@ public class LikelihoodWeighting {
     private WeightedSample weightedSample(BayesianNetwork bn, Assignment e){
         WeightedSample weightedSample = new WeightedSample();
 
-
-        for (RandomVariable X:bn.getVariableList()){
+        for (RandomVariable X:bn.getVariableListTopologicallySorted()){
             if (e.containsKey(X)){
-//                weightedSample.assignment.put(X, e.get(X));
-                weightedSample.weight *= bn.getProb(X, weightedSample.assignment);
+                weightedSample.weight *= bn.getProb(X, e);
             }else{
+                System.out.println("WHY");
+                Distribution distribution = new Distribution(X);
+                for (Object ob: X.getDomain()){
+                    Assignment copy = e.copy();
+                    copy.put(X, bn.getProb(X, copy));
+                    distribution.put(ob, bn.getProb(X, copy));
+                }
+
+                distribution.normalize();
+                weightedSample.assignment.set(X, distribution.randomSample());
+
             }
         }
 
@@ -57,10 +66,10 @@ public class LikelihoodWeighting {
 
 
     public static void main(String[] args) {
-//        String[] myargs = {"100000", "aima-alarm.xml", "B", "J", "true", "M", "true"};
+//        String[] myargs = {"1000000", "aima-alarm.xml", "B", "J", "true", "M", "true"};
 
         // wet grass example
-        String[] myargs = {"100000", "aima-wet-grass.xml", "R", "S", "true"};
+        String[] myargs = {"100000", "aima-wet-grass.xml", "R", "C", "true"};
 
         args = myargs;
 //        MAKE SURE I DELETE PREVIOUS TWO LINES BEFORE SUBMITTING

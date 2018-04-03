@@ -28,11 +28,15 @@ public class EnumerationInferencer implements Inferencer {
             return 1.0;
         }
 
-        // Might need to copy vars into a new list before doing this.
         RandomVariable Y = vars.get(0);
         List<RandomVariable> rest = vars.subList(1, vars.size());
 
+
         if (e.containsKey(Y)){
+            System.out.println(bn.toString());
+            System.out.println(Y.toString());
+            System.out.println(e.toString());
+            System.out.println(bn.getProb(Y, e));
             return bn.getProb(Y, e) * enumerateAll(bn, rest, e);
         }else{
             return sumAssignments(bn, Y, rest, e);
@@ -120,7 +124,6 @@ public class EnumerationInferencer implements Inferencer {
             Assignment e = new Assignment();
 
 
-            int i = 0;
             for (String key: evidenceVariables.keySet()){
                 RandomVariable rv = bn.getVariableByName(key);
                 e.put(rv, evidenceVariables.get(key));
