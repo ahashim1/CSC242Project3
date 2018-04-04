@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4f8ae5c-b200-4030-b10a-e779de7449e8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CSC242Project3/bn/core/Distribution.class" afterPath="$PROJECT_DIR$/out/production/CSC242Project3/bn/core/Distribution.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/bn/inference/ExactInferencer.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/bn/inference/EnumerationInferencer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/bn/inference/EnumerationInferencer.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CSC242Project3/bn/inference/EnumerationInferencer.class" afterPath="$PROJECT_DIR$/out/production/CSC242Project3/bn/inference/EnumerationInferencer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CSC242Project3/bn/inference/GibbsSampling.class" afterPath="$PROJECT_DIR$/out/production/CSC242Project3/bn/inference/GibbsSampling.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CSC242Project3/bn/inference/LikelihoodWeighting.class" afterPath="$PROJECT_DIR$/out/production/CSC242Project3/bn/inference/LikelihoodWeighting.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CSC242Project3/bn/inference/RejectionSampling.class" afterPath="$PROJECT_DIR$/out/production/CSC242Project3/bn/inference/RejectionSampling.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bn/core/Distribution.java" afterPath="$PROJECT_DIR$/src/bn/core/Distribution.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bn/inference/EnumerationInferencer.java" afterPath="$PROJECT_DIR$/src/bn/inference/EnumerationInferencer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bn/inference/GibbsSampling.java" afterPath="$PROJECT_DIR$/src/bn/inference/GibbsSampling.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bn/inference/LikelihoodWeighting.java" afterPath="$PROJECT_DIR$/src/bn/inference/LikelihoodWeighting.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bn/inference/RejectionSampling.java" afterPath="$PROJECT_DIR$/src/bn/inference/RejectionSampling.java" />
     </list>
@@ -24,25 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GibbsSampling.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/bn/inference/GibbsSampling.java">
+      <file leaf-file-name="ExactInferencer.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/bn/inference/ExactInferencer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="28" column="25" lean-forward="false" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#349#350#0" expanded="true" />
-                <element signature="e#387#388#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LikelihoodWeighting.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/bn/inference/LikelihoodWeighting.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
-              <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+            <state relative-caret-position="345">
+              <caret line="23" column="17" lean-forward="true" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -53,8 +37,8 @@
       <file leaf-file-name="RejectionSampling.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bn/inference/RejectionSampling.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-332">
-              <caret line="12" column="31" lean-forward="false" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="53" />
+            <state relative-caret-position="113">
+              <caret line="87" column="33" lean-forward="false" selection-start-line="87" selection-start-column="33" selection-end-line="87" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -78,6 +62,8 @@
       <find>bn.getp</find>
       <find>containsKe</find>
       <find>containsKey</find>
+      <find>public</find>
+      <find>public BIFParser</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -93,10 +79,12 @@
       <list>
         <option value="$PROJECT_DIR$/src/bn/core/Driver.java" />
         <option value="$PROJECT_DIR$/src/bn/core/Distribution.java" />
-        <option value="$PROJECT_DIR$/src/bn/inference/RejectionSampling.java" />
-        <option value="$PROJECT_DIR$/src/bn/inference/EnumerationInferencer.java" />
-        <option value="$PROJECT_DIR$/src/bn/inference/LikelihoodWeighting.java" />
         <option value="$PROJECT_DIR$/src/bn/inference/GibbsSampling.java" />
+        <option value="$PROJECT_DIR$/src/bn/inference/RejectionSampling.java" />
+        <option value="$PROJECT_DIR$/src/bn/inference/LikelihoodWeighting.java" />
+        <option value="$PROJECT_DIR$/src/bn/inference/Inferencer.java" />
+        <option value="$PROJECT_DIR$/src/bn/inference/EnumerationInferencer.java" />
+        <option value="$PROJECT_DIR$/src/bn/inference/ExactInferencer.java" />
       </list>
     </option>
   </component>
@@ -106,9 +94,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="y" value="22" />
-    <option name="width" value="813" />
+    <option name="width" value="640" />
     <option name="height" value="737" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -213,7 +201,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.GibbsSampling">
+  <component name="RunManager" selected="Application.ExactInferencer">
     <configuration name="EnumerationInferencer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -222,6 +210,25 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="bn.inference.EnumerationInferencer" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="CSC242Project3" />
+      <envs />
+    </configuration>
+    <configuration name="ExactInferencer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="bn.inference.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="bn.inference.ExactInferencer" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" />
@@ -271,22 +278,6 @@
       <module name="CSC242Project3" />
       <envs />
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="CSC242Project3" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-    </configuration>
     <configuration name="RejectionSampling" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -322,19 +313,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-      <item index="1" class="java.lang.String" itemvalue="Application.EnumerationInferencer" />
-      <item index="2" class="java.lang.String" itemvalue="Application.RejectionSampling" />
-      <item index="3" class="java.lang.String" itemvalue="Application.LikelihoodWeighting" />
-      <item index="4" class="java.lang.String" itemvalue="Application.GibbsSampling" />
+      <item index="0" class="java.lang.String" itemvalue="Application.EnumerationInferencer" />
+      <item index="1" class="java.lang.String" itemvalue="Application.RejectionSampling" />
+      <item index="2" class="java.lang.String" itemvalue="Application.LikelihoodWeighting" />
+      <item index="3" class="java.lang.String" itemvalue="Application.GibbsSampling" />
+      <item index="4" class="java.lang.String" itemvalue="Application.ExactInferencer" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.GibbsSampling" />
-        <item index="1" class="java.lang.String" itemvalue="Application.LikelihoodWeighting" />
-        <item index="2" class="java.lang.String" itemvalue="Application.RejectionSampling" />
-        <item index="3" class="java.lang.String" itemvalue="Application.EnumerationInferencer" />
-        <item index="4" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="0" class="java.lang.String" itemvalue="Application.ExactInferencer" />
+        <item index="1" class="java.lang.String" itemvalue="Application.EnumerationInferencer" />
+        <item index="2" class="java.lang.String" itemvalue="Application.LikelihoodWeighting" />
+        <item index="3" class="java.lang.String" itemvalue="Application.GibbsSampling" />
+        <item index="4" class="java.lang.String" itemvalue="Application.RejectionSampling" />
       </list>
     </recent_temporary>
   </component>
@@ -351,27 +342,27 @@
       <workItem from="1522011385203" duration="8771000" />
       <workItem from="1522114994860" duration="2079000" />
       <workItem from="1522696257238" duration="25709000" />
-      <workItem from="1522785200184" duration="6749000" />
+      <workItem from="1522785200184" duration="13892000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43308000" />
+    <option name="totallyTimeSpent" value="50451000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1280" height="737" extended-state="6" />
+    <frame x="0" y="22" width="640" height="737" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30526316" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932332" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28270677" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -427,9 +418,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="17" column="40" lean-forward="true" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -480,9 +469,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="19" column="55" lean-forward="false" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -573,9 +560,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="5" column="80" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="80" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -626,14 +611,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/bn/core/Driver.java" />
-    <entry file="file://$PROJECT_DIR$/src/bn/parser/BIFParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5542">
-          <caret line="81" column="13" lean-forward="false" selection-start-line="81" selection-start-column="13" selection-end-line="81" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/bn/core/Domain.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -653,14 +630,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bn/inference/Inferencer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -697,16 +666,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/bn/inference/EnumerationInferencer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="38" column="7" lean-forward="false" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/bn/core/BayesianNetwork.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -733,18 +692,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/bn/inference/RejectionSampling.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-332">
-          <caret line="12" column="31" lean-forward="false" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bn/inference/LikelihoodWeighting.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="113">
-          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <caret line="87" column="33" lean-forward="false" selection-start-line="87" selection-start-column="33" selection-end-line="87" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -753,12 +702,64 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/bn/inference/GibbsSampling.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="28" column="25" lean-forward="false" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+        <state relative-caret-position="-290">
+          <caret line="31" column="63" lean-forward="false" selection-start-line="31" selection-start-column="63" selection-end-line="31" selection-end-column="63" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#349#350#0" expanded="true" />
             <element signature="e#387#388#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bn/inference/LikelihoodWeighting.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="30" column="39" lean-forward="false" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bn/inference/Inferencer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="80" lean-forward="true" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bn/parser/BIFLexer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-466">
+          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bn/parser/BIFParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="165" column="18" lean-forward="false" selection-start-line="165" selection-start-column="2" selection-end-line="165" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bn/inference/EnumerationInferencer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1324">
+          <caret line="117" column="0" lean-forward="false" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bn/inference/ExactInferencer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="17" lean-forward="true" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

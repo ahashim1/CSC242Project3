@@ -27,6 +27,7 @@ public class LikelihoodWeighting implements Inferencer  {
 
     public Distribution ask(BayesianNetwork bn, RandomVariable X, Assignment e){
         Distribution Q = new Distribution(X);
+
         for (Object ob: X.getDomain()){
             Q.put(ob, 0);
         }
@@ -45,7 +46,8 @@ public class LikelihoodWeighting implements Inferencer  {
 
         for (RandomVariable X:bn.getVariableListTopologicallySorted()){
             if (e.containsKey(X)){
-                weightedSample.weight *= bn.getProb(X, e);
+                weightedSample.assignment.set(X, e.get(X));
+                weightedSample.weight *= bn.getProb(X, weightedSample.assignment);
             }else{
                 System.out.println("WHY");
                 Distribution distribution = new Distribution(X);

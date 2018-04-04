@@ -93,6 +93,7 @@ public class RejectionSampling implements Inferencer {
         }
 
 
+//        Can evidence variables have a value other than boolean?
         HashMap<String, Boolean> evidenceVariables = new HashMap<>();
         for (int i = 0; i < evidenceParameters.length; i += 2) {
             String evidenceVariable = evidenceParameters[i];
