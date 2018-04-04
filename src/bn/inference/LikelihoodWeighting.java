@@ -8,57 +8,55 @@ import java.io.FileInputStream;
 import java.util.Arrays;
 import java.util.HashMap;
 
-public class LikelihoodWeighting implements Inferencer  {
+public class LikelihoodWeighting implements Inferencer{
+    private int samples;
+
     private class WeightedSample{
-        double weight;
         Assignment assignment;
-        WeightedSample(){
-            weight = 1;
-            assignment = new Assignment();
+        Double weight;
+        private WeightedSample(Assignment e){
+            this.assignment = e;
+            this.weight = 1.0;
         }
     }
-
-
-    private int samples;
     public LikelihoodWeighting(int samples){
         this.samples = samples;
     }
 
 
     public Distribution ask(BayesianNetwork bn, RandomVariable X, Assignment e){
-        Distribution Q = new Distribution(X);
-
+        Distribution W = new Distribution(X);
         for (Object ob: X.getDomain()){
-            Q.put(ob, 0);
+            W.put(ob, 0.0);
         }
 
-        for (int j = 1; j<=samples; j++){
-            WeightedSample weightedSample = weightedSample(bn, e);
-            Q.put(weightedSample.assignment.get(X), Q.get(weightedSample.assignment.get(X)) + weightedSample.weight);
+        for (int j=1; j<=samples; j++){
+            WeightedSample weightedSample = Weighted_Sample(bn, e);
+
+            W.put(weightedSample.assignment.get(X), W.get(weightedSample.assignment.get(X)) + weightedSample.weight);
         }
 
-        Q.normalize();
-        return Q;
+        W.normalize();
+        return W;
+
     }
 
-    private WeightedSample weightedSample(BayesianNetwork bn, Assignment e){
-        WeightedSample weightedSample = new WeightedSample();
-
-        for (RandomVariable X:bn.getVariableListTopologicallySorted()){
-            if (e.containsKey(X)){
-                weightedSample.assignment.set(X, e.get(X));
-                weightedSample.weight *= bn.getProb(X, weightedSample.assignment);
+    private WeightedSample Weighted_Sample(BayesianNetwork bn, Assignment e){
+        WeightedSample weightedSample = new WeightedSample(e.copy());
+        for (RandomVariable xi: bn.getVariableListTopologicallySorted()){
+            if (weightedSample.assignment.containsKey(xi)){
+                weightedSample.assignment.set(xi, weightedSample.assignment.get(xi));
+                weightedSample.weight *= bn.getProb(xi, weightedSample.assignment);
             }else{
-                System.out.println("WHY");
-                Distribution distribution = new Distribution(X);
-                for (Object ob: X.getDomain()){
-                    Assignment copy = e.copy();
-                    copy.put(X, bn.getProb(X, copy));
-                    distribution.put(ob, bn.getProb(X, copy));
+                Distribution distribution = new Distribution(xi);
+                for (Object ob: xi.getDomain()){
+                    weightedSample.assignment.set(xi, ob);
+                    distribution.put(ob, bn.getProb(xi, weightedSample.assignment));
                 }
 
-                distribution.normalize();
-                weightedSample.assignment.set(X, distribution.randomSample());
+
+                weightedSample.assignment.set(xi, distribution.randomSample());
+
 
             }
         }
@@ -66,12 +64,11 @@ public class LikelihoodWeighting implements Inferencer  {
         return weightedSample;
     }
 
-
     public static void main(String[] args) {
-//        String[] myargs = {"1000000", "aima-alarm.xml", "B", "J", "true", "M", "true"};
+        String[] myargs = {"100000", "aima-alarm.xml", "B", "J", "true", "M", "true"};
 
         // wet grass example
-        String[] myargs = {"100000", "aima-wet-grass.xml", "R", "C", "true"};
+//        String[] myargs = {"100000", "aima-wet-grass.xml", "R", "C", "true", "W", "true"};
 
         args = myargs;
 //        MAKE SURE I DELETE PREVIOUS TWO LINES BEFORE SUBMITTING
@@ -91,17 +88,12 @@ public class LikelihoodWeighting implements Inferencer  {
         }
 
 
-        HashMap<String, Boolean> evidenceVariables = new HashMap<>();
+//        Can evidence variables have a value other than boolean?
+        HashMap<String, String> evidenceVariables = new HashMap<>();
         for (int i = 0; i < evidenceParameters.length; i += 2) {
             String evidenceVariable = evidenceParameters[i];
             String assignment = evidenceParameters[i + 1];
-            if (assignment.equalsIgnoreCase("true") || assignment.equalsIgnoreCase("false")) {
-                Boolean evidenceVariableAssignment = Boolean.parseBoolean(assignment);
-                evidenceVariables.put(evidenceVariable, evidenceVariableAssignment);
-            } else {
-                System.err.println("The assignment for an evidence variable is not a boolean");
-                return;
-            }
+            evidenceVariables.put(evidenceVariable, assignment);
         }
 
 
@@ -151,4 +143,5 @@ public class LikelihoodWeighting implements Inferencer  {
         }
 
     }
+
 }

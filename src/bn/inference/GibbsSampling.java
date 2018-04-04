@@ -10,6 +10,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
+import java.util.Random;
 
 public class GibbsSampling {
     private int samples;
@@ -19,17 +20,18 @@ public class GibbsSampling {
     public Distribution ask(BayesianNetwork bn, RandomVariable X, Assignment e){
         Distribution distribution = new Distribution(X);
         for (Object ob: X.getDomain()){
-            distribution.put(ob, 0);
+            distribution.put(ob, 0.0);
         }
 
         List<RandomVariable> Z = getNonEvidenceVariables(bn, e);
         Assignment x = e.copy();
-        initializeStateWithRandomValues(x, Z, bn);
+
+        initializeStateWithRandomValues(x, Z);
 
         for (int j=1; j<=samples; j++){
             for (RandomVariable Zi: Z){
                 sampleFromMarkovBlanket(Zi, x, bn);
-                distribution.put(x.get(Zi), distribution.get(Zi) + 1.0);
+                distribution.put(x.get(Zi), distribution.get(x.get(Zi)) + 1.0);
             }
         }
         distribution.normalize();
@@ -38,39 +40,36 @@ public class GibbsSampling {
 
     private void sampleFromMarkovBlanket(RandomVariable Zi, Assignment x, BayesianNetwork bn){
         Distribution distribution = new Distribution(Zi);
+        Assignment copy = x.copy();
+
         for (Object ob: Zi.getDomain()){
-            x.put(Zi, ob);
+            copy.set(Zi, ob);
 
             Set<RandomVariable> children = bn.getChildren(Zi);
-            double productProbability = bn.getProb(Zi, x);
+            double product= bn.getProb(Zi, copy);
 
             for (RandomVariable child: children){
-                productProbability *= bn.getProb(child, x);
+
+
+                product *= bn.getProb(child, copy);
             }
 
-            distribution.put(ob, productProbability);
-            x.remove(Zi);
+            distribution.put(ob, product);
         }
 
         distribution.normalize();
-
-        x.put(Zi, distribution.randomSample());
+        x.set(Zi, distribution.randomSample());
     }
-    private void initializeStateWithRandomValues(Assignment x, List<RandomVariable> Z, BayesianNetwork bn){
+    private void initializeStateWithRandomValues(Assignment x, List<RandomVariable> Z){
         for (RandomVariable Zi: Z){
-            Distribution distribution = new Distribution(Zi);
-            for (Object ob: Zi.getDomain()){
-                x.put(Zi, ob);
-                distribution.put(ob, bn.getProb(Zi, x));
-                x.remove(Zi);
-            }
-            distribution.normalize();
-            x.set(Zi, distribution.randomSample());
+            Object randomValue = Zi.getDomain().get(new Random().nextInt(Zi.getDomain().size()));
+            x.set(Zi, randomValue);
+
         }
     }
 
     private List<RandomVariable> getNonEvidenceVariables(BayesianNetwork bn, Assignment e){
-        List<RandomVariable> vars = bn.getVariableList();
+        List<RandomVariable> vars = bn.getVariableListTopologicallySorted();
         List<RandomVariable> nonEvidenceVars = new ArrayList<>();
         for (RandomVariable X: vars){
             if (!e.containsKey(X)){
@@ -84,10 +83,10 @@ public class GibbsSampling {
     }
 
     public static void main(String[] args) {
-//        String[] myargs = {"1000000", "aima-alarm.xml", "B", "J", "true", "M", "true"};
+        String[] myargs = {"10000", "aima-alarm.xml", "B", "J", "true", "M", "true"};
 
         // wet grass example
-        String[] myargs = {"100000", "aima-wet-grass.xml", "R", "S", "true"};
+//        String[] myargs = {"100000", "aima-wet-grass.xml", "R", "S", "true"};
 
         args = myargs;
 //        MAKE SURE I DELETE PREVIOUS TWO LINES BEFORE SUBMITTING
@@ -102,22 +101,16 @@ public class GibbsSampling {
         String queryVariable = args[2];
         String[] evidenceParameters = Arrays.copyOfRange(args, 3, args.length);
         if (evidenceParameters.length % 2 != 0) {
-            System.err.println("You need to assign a boolean to each of your evidence parameters");
+            System.err.println("You need to assign a value to each of your evidence parameters");
             return;
         }
 
 
-        HashMap<String, Boolean> evidenceVariables = new HashMap<>();
+        HashMap<String, String> evidenceVariables = new HashMap<>();
         for (int i = 0; i < evidenceParameters.length; i += 2) {
             String evidenceVariable = evidenceParameters[i];
             String assignment = evidenceParameters[i + 1];
-            if (assignment.equalsIgnoreCase("true") || assignment.equalsIgnoreCase("false")) {
-                Boolean evidenceVariableAssignment = Boolean.parseBoolean(assignment);
-                evidenceVariables.put(evidenceVariable, evidenceVariableAssignment);
-            } else {
-                System.err.println("The assignment for an evidence variable is not a boolean");
-                return;
-            }
+            evidenceVariables.put(evidenceVariable, assignment);
         }
 
 
