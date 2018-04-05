@@ -10,10 +10,13 @@ import java.util.HashMap;
 
 public class ApproximateInferencer {
     public static void main(String[] args) {
-        String[] myargs = {"GibbsSampling", "1000000", "aima-alarm.xml", "B", "J", "true", "M", "true"};
+//        String[] myargs = {"GibbsSampling", "1000000", "aima-alarm.xml", "B", "J", "true", "M", "true"};
 
         // wet grass example
-//        String[] myargs = {"100000", "aima-wet-grass.xml", "R", "S", "true"};
+//        String[] myargs = {"GibbsSampling", "10000", "aima-wet-grass.xml", "R", "S", "true"};
+
+
+        String[] myargs = {"GibbsSampling", "1000", "alarm.bif", "EXPCO2", "HR", "HIGH", "VENTLUNG", "HIGH"};
 
         args = myargs;
 //        MAKE SURE I DELETE PREVIOUS TWO LINES BEFORE SUBMITTING

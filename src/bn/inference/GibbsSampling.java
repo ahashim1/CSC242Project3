@@ -1,13 +1,8 @@
 package bn.inference;
 
 import bn.core.*;
-import bn.parser.BIFParser;
-import bn.parser.XMLBIFParser;
 
-import java.io.FileInputStream;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 import java.util.Random;
@@ -31,6 +26,9 @@ public class GibbsSampling {
         for (int j=1; j<=samples; j++){
             for (RandomVariable Zi: Z){
                 sampleFromMarkovBlanket(Zi, x, bn);
+                if (distribution.get(x.get(Zi)) == null){
+                    distribution.put(x.get(Zi), 0.0);
+                }
                 distribution.put(x.get(Zi), distribution.get(x.get(Zi)) + 1.0);
             }
         }
@@ -44,16 +42,11 @@ public class GibbsSampling {
 
         for (Object ob: Zi.getDomain()){
             copy.set(Zi, ob);
-
             Set<RandomVariable> children = bn.getChildren(Zi);
             double product= bn.getProb(Zi, copy);
-
             for (RandomVariable child: children){
-
-
                 product *= bn.getProb(child, copy);
             }
-
             distribution.put(ob, product);
         }
 

@@ -49,7 +49,7 @@ public class ExactInferencer implements Inferencer {
     }
 
     public static void main(String[] args) {
-        String[] myargs = {"alarm.xml", "B", "J", "true", "M", "true"};
+        String[] myargs = {"alarm.bif", "EXPCO2", "HR", "HIGH", "VENTLUNG", "HIGH"};
 
         // wet grass example
 //        String[] myargs = {"aima-wet-grass.xml", "R", "S", "true"};
