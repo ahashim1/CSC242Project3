@@ -75,9 +75,9 @@ public class Distribution extends LinkedHashMap<Object,Double> {
     }
 
 
-//    My implementation of getRandomSample
+//    My implementation of getting a sample based on a distribution
     public Object randomSample(){
-        List<Object> keys = new ArrayList<Object>(keySet());
+        List<Object> keys = new ArrayList<>(keySet());
         double randomValue = Math.random();
         double sum = 0.0;
         for (int index = 0; index < keys.size(); index++) {
