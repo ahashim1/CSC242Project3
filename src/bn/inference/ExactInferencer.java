@@ -49,7 +49,7 @@ public class ExactInferencer implements Inferencer {
     }
 
     public static void main(String[] args) {
-        String[] myargs = {"aima-alarm.xml", "B", "J", "true", "M", "true"};
+        String[] myargs = {"alarm.xml", "B", "J", "true", "M", "true"};
 
         // wet grass example
 //        String[] myargs = {"aima-wet-grass.xml", "R", "S", "true"};
@@ -113,10 +113,13 @@ public class ExactInferencer implements Inferencer {
                 e.put(rv, evidenceVariables.get(key));
             }
 
-
+            long start = System.currentTimeMillis();
             ExactInferencer exactInferencer = new ExactInferencer();
             Distribution distribution = exactInferencer.ask(bn, query, e);
-            System.out.println(distribution.toString());
+            long elapsed = System.currentTimeMillis() - start;
+            System.out.println("Problem: " + filename);
+            System.out.println("Result: " + distribution.toString());
+            System.out.println("Time elapsed (ms): " + elapsed);
         } catch (Exception e) {
             e.printStackTrace();
         }
