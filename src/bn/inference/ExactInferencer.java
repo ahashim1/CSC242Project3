@@ -12,29 +12,36 @@ import java.util.List;
 public class ExactInferencer implements Inferencer {
 
     public Distribution ask(BayesianNetwork bn, RandomVariable X, Assignment e) {
+        //  Init empty distribution over random var X
         Distribution Q = new Distribution(X);
+        //  Over domain of X enumerate each value
         for (Object xi: X.getDomain()){
+            //  Get evidence, add a single value of X
             Assignment e_xi = e.copy();
             e_xi.set(X, xi);
+            //
             List<RandomVariable> vars = bn.getVariableListTopologicallySorted();
             Q.put(xi, enumerateAll(bn, vars, e_xi));
         }
-
+        //  Normalize and send it
         Q.normalize();
         return Q;
     }
 
     private double enumerateAll(BayesianNetwork bn, List<RandomVariable> vars, Assignment e){
+        //  If no random variables, prob is 100%
         if (vars.isEmpty()){
             return 1.0;
         }
-
+        //  Get first random variable from variable list (topological order)
         RandomVariable Y = vars.get(0);
         List<RandomVariable> rest = vars.subList(1, vars.size());
 
+        //  If in evidence, return known Prob of Y given parents
         if (e.containsKey(Y)){
             return bn.getProb(Y, e) * enumerateAll(bn, rest, e);
         }else{
+            //  Else return the sum over the full prob dist of y and return that
             double sum = 0.0;
             for (Object y: Y.getDomain()){
                 Assignment e_y = e.copy();
